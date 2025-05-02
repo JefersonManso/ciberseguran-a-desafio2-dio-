@@ -1,6 +1,8 @@
 # Entendendo um Ransomware na Prática com Python
 # Encriptação
 
+### Importações
+
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 import os
@@ -29,10 +31,12 @@ def encrypt_file(input_file_path, output_file_path, key):
         f.write(iv + encrypted_data)
 
     print(f"Arquivo encriptado salvo em {output_file_path}")
+    
+ Chave AES de 256 bits (32 bytes)
 
-# Chave AES de 256 bits (32 bytes)
+# Decriptação
 
-# Descriptação
+### Importações
 
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
@@ -61,7 +65,7 @@ def decrypt_file(input_file_path, output_file_path, key):
 
     print(f"Arquivo descriptado salvo em {output_file_path}")
 
-# Caminho do arquivo encriptado e de saída
+ Caminho do arquivo encriptado e de saída
 input_file = 'arquivo_encriptado.bin'
 output_file = 'arquivo_descriptado.txt'
 
@@ -69,7 +73,7 @@ decrypt_file(input_file, output_file, key)
 
 key = os.urandom(32)
 
-# Caminho do arquivo de entrada e saída
+ Caminho do arquivo de entrada e saída
 input_file = 'arquivo.txt'
 output_file = 'arquivo_encriptado.bin'
 
